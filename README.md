@@ -1,10 +1,11 @@
 # Gregou Bot Covid
+## Send a notification and a link when a dose is available in chosen vaccine centers
 
 A bot to get a chronodose vaccine in France using **Doctolib**, faster than **ViteMaDose** and tailored for your needs !
 Based on [this repo](https://github.com/bntan/doctolib-covid) , but with more features :
 
-- Parallel requests
-- Run on a loop
+- Multi threaded requests
+- Run continuously
 - Apprise notifications
 
 ## Setup
