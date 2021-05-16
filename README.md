@@ -30,6 +30,23 @@ centre-de-vaccinations-covid-saint-mande
 ```
 
 ## Usage
-Run the script using `python app.py` inside the project folder
+Run the script using `python app.py` inside the project folder using the terminal/bash
+
+Output example :
+```
+Nombre de centres : 26
+Nombre d'essais depuis le lancement du script : 34
+Le centre centre-de-vaccination-grand-chambery n'a pas de rendez vous pour une 1ere injection de Pfizer ou Moderna
+0 appointments available at Mairie du 8ème arrondissement de Paris - 3 Rue de Lisbonne, 75008 Paris
+0 appointments available at  - 78 Rue Bonaparte, 75006 Paris
+0 appointments available at Mairie du 9e - Centre de Vaccination Covid - 6 Rue Drouot, 75009 Paris
+0 appointments available at Centre de Vaccination - Salle Olympe de Gouges - 15 Rue Merlin, 75011 Paris
+0 appointments available at Centre de Vaccination - Centre Médical International - 38 Quai de Jemmapes, 75010 Paris
+0 appointments available at Gymnase Camou - 37 Avenue de la Bourdonnais, 75007 Paris
+Le centre centre-de-vaccination-covid-19-des-sapeurs-pompiers-de-paris n'a pas de rendez vous pour une 1ere injection de Pfizer ou Moderna
+0 appointments available at Centre de santé Bauchat Nation - 22 Rue du Sergent Bauchat, 75012 Paris
+0 appointments available at Centre de Vaccination - Centre Bertheau - 15-17 Rue Charles Bertheau, 75013 Paris
+
+```
 
 
