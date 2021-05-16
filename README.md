@@ -18,14 +18,6 @@ The script use [Apprise for notifications](https://github.com/caronc/apprise). Y
 ## Setup Centers
 The script goes through selected centers and check for availability, so make sure you populate `.config/centers.conf` with vaccine centers (to add one, go to doctolib and copy the name of the center from the url.
 
-## Optional settings
-By default, script checks for updates every 60 seconds. You can change it on `app.py` here :
-
-```python
-# Delay in seconds
-DELAY_BETWEEN_CHECKS = 60
-```
-
 Example :
 ```
 https://www.doctolib.fr/centre-de-sante/saint-mande/centre-de-vaccinations-covid-saint-mande
@@ -35,6 +27,14 @@ When added to the `.config/centers.conf` file :
 ...
 centre-de-vaccinations-covid-saint-mande
 ...
+```
+
+## Optional settings
+By default, script checks for updates every 60 seconds. You can change it on `app.py` here :
+
+```python
+# Delay in seconds
+DELAY_BETWEEN_CHECKS = 60
 ```
 
 ## Usage
