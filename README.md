@@ -15,7 +15,7 @@ Based on [this repo](https://github.com/bntan/doctolib-covid) , but with more fe
 ## Setup Notifications
 The script use [Apprise for notifications](https://github.com/caronc/apprise). You have to create a `.config/apprise.conf` file and setup your notifications preferences from there. I recommand using [Telegram](https://github.com/caronc/apprise/wiki/Notify_telegram) but you can use many more services listed [here][https://github.com/caronc/apprise#popular-notification-services), for example SMS, desktop notifications, mail, Discord, etc ...
 
-## Centers
+## Setup Centers
 The script goes through selected centers and check for availability, so make sure you populate `.config/centers.conf` with vaccine centers (to add one, go to doctolib and copy the name of the center from the url.
 
 Example :
@@ -29,8 +29,7 @@ centre-de-vaccinations-covid-saint-mande
 ...
 ```
 
-4. Setup  : Copy `.config/apprise_example.conf` to `apprise.conf`, and copy there your credentials (examples are provided inside). Apprise is a service used to send you notifications without any hassle. You can use your favorite notification provider (desktop,sms,mail,Telegram,Discord etc...). See [This](https://github.com/caronc/apprise#popular-notification-services) to get your credentials.
-5. Use the .config/centers.conf provided to add or remove vaccines centers. Some are already being provided.
-
 ## Usage
 Run the script using `python app.py` inside the project folder
+
+
