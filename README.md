@@ -33,8 +33,10 @@ centre-de-vaccinations-covid-saint-mande
 By default, script checks for updates every 60 seconds. You can change it on `app.py` here :
 
 ```python
+...
 # Delay in seconds
 DELAY_BETWEEN_CHECKS = 60
+...
 ```
 
 ## Usage
