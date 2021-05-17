@@ -19,8 +19,13 @@ def read_centers(file):
 
 
 def check_for_availability(center):
-    data = requests.get(
-        f"https://www.doctolib.fr/booking/{center}.json").json()["data"]
+    try:
+        data = requests.get(
+            f"https://www.doctolib.fr/booking/{center}.json").json()["data"]
+    except:
+        print(
+            f"Erreur de connexion avec https://www.doctolib.fr/booking/{center}.json")
+        return
 
     visit_motives = [visit_motive for visit_motive in data["visit_motives"]
                      if visit_motive["name"].startswith("1re injection") and
@@ -56,21 +61,26 @@ def check_for_availability(center):
         # print(visit_motive_ids)
         # print(practice_ids)
         # print(agenda_ids)
-        response = requests.get(
-            "https://www.doctolib.fr/availabilities.json",
-            params={
-                "start_date": start_date,
-                "visit_motive_ids": visit_motive_ids,
-                "agenda_ids": agenda_ids,
-                "practice_ids": practice_ids,
-                "insurance_sector": "public",
-                "destroy_temporary": "true",
-                "limit": 2
-            },
-            headers={
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:88.0) Gecko/20100101 Firefox/88.0'}
+        try:
+            response = requests.get(
+                "https://www.doctolib.fr/availabilities.json",
+                params={
+                    "start_date": start_date,
+                    "visit_motive_ids": visit_motive_ids,
+                    "agenda_ids": agenda_ids,
+                    "practice_ids": practice_ids,
+                    "insurance_sector": "public",
+                    "destroy_temporary": "true",
+                    "limit": 2
+                },
+                headers={
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:88.0) Gecko/20100101 Firefox/88.0'}
 
-        )
+            )
+        except:
+            print(
+                f"Erreur de connexion avec https://www.doctolib.fr/availabilities.json")
+            return
         response.raise_for_status()
         nb_availabilities = response.json()["total"]
         result = str(nb_availabilities) + " appointments available at " + \
@@ -101,8 +111,7 @@ def main():
 
         # for center in centers:
         #    available = check_for_availability(center)
-        #    if(available is not None):
-        #        notification_handler.send(available)
+
         time.sleep(DELAY_BETWEEN_CHECKS)
         num_tries += 1
 
